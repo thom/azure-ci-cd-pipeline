@@ -170,9 +170,24 @@ You need to execute the following steps:
 4. Create a new pipeline:
     - Select "GitHub" on the "Connect" tab
     - Chose your repository on the "Select" tab
-    - Configure the pipeline as "Python to Linux Web App on Azure" and select the web app you created before
+    - Update the variables
 
-Required screenshots:
+```bash
+# Azure Resource Manager connection created during pipeline creation
+azureServiceConnectionId: '797b064-faf8-45c8-be58-b627cd632286'
+
+# Web app name
+webAppName: 'flask-ml-service-ikhono'
+
+# Environment name
+environmentName: 'flask-ml-service-ikhono'
+```
+
+Use the following end-point to get your Azure Service Connection ID: [https://dev.azure.com/{organization}/{project}/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2
+](https://dev.azure.com/{organization}/{project}/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2
+) (replace organization and project accordingly).
+
+<TODO: Add required screenshots>
 
 - Successful deploy of the project in Azure Pipelines. [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
@@ -199,7 +214,11 @@ az group delete -n flask-ml-service-rg
 
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+The following enhancements could be implemented to improve the project:
+
+- Use Git branches to deploy code into testing/staging environment instead of pushing it to production immediately
+- Use Terraform to deploy the infrastructure instead of Azure CLI
+- Only use one CI/CD tool instead of using GitHub Actions and Azure Pipelines
 
 ## Demo
 
