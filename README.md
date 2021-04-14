@@ -124,6 +124,10 @@ The output should look like below:
 
 ![Prediction](images/prediction-local.png)
 
+Successful build of the project in GitHub:
+
+![GitHub Actions](images/github-build.png)
+
 ### Deploy the web app to Azure App Services
 
 In order to deploy the application to Azure App Service, you can run the following command:
