@@ -12,6 +12,7 @@
   - [Deploy the web app to Azure App Services](#deploy-the-web-app-to-azure-app-services)
   - [Create Azure DevOps pipeline](#create-azure-devops-pipeline)
   - [Make a prediction](#make-a-prediction)
+  - [Load testing](#load-testing)
 - [Clean-up](#clean-up)
 - [Enhancements](#enhancements)
 - [Demo](#demo)
@@ -207,6 +208,25 @@ az webapp log tail -g flask-ml-service-rg --name flask-ml-service-ikhono
 ```
 
 ![App log](images/app-log.png)
+
+### Load testing
+
+Locust can be used to do a load test against the application.
+
+Install and start Locust:
+
+```bash
+pip install locust
+locust
+```
+
+Open [http://localhost:8089](http://localhost:8089). Enter number of total users to simulate and the spawn rate and click "start swarming":
+
+![New Locust load test](images/locust-new.png)
+
+Watch the result of the load test:
+
+![New Locust load test](images/locust-running.png)
 
 ## Clean-up
 
