@@ -1,7 +1,5 @@
 [![Python application test with Github Actions](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml)
 
-[![Build Status](https://dev.azure.com/ikhono/Udacity%20Flask%20ML%20Deploy/_apis/build/status/thom.azure-ci-cd-pipeline?branchName=main)](https://dev.azure.com/ikhono/Udacity%20Flask%20ML%20Deploy/_build/latest?definitionId=3&branchName=main)
-
 # Udacity Cloud DevOps using Microsoft Azure Nanodegree Program - Project: Building a CI/CD Pipeline
 
 - [Introduction](#introduction)
@@ -13,6 +11,7 @@
   - [Test the web app in Azure Cloud Shell](#test-the-web-app-in-azure-cloud-shell)
   - [Deploy the web app to Azure App Services](#deploy-the-web-app-to-azure-app-services)
   - [Create Azure DevOps pipeline](#create-azure-devops-pipeline)
+  - [Make a prediction](#make-a-prediction)
 - [Clean-up](#clean-up)
 - [Enhancements](#enhancements)
 - [Demo](#demo)
@@ -150,10 +149,6 @@ az webapp up \
     --verbose
 ```
 
-Screenshot of the web app in Azure:
-
-![Web app](images/web-app.png)
-
 ### Create Azure DevOps pipeline
 
 Follow [Use CI/CD to deploy a Python web app to Azure App Service on Linux](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops) in order to setup the Azure DevOps pipeline for the project.
@@ -187,22 +182,27 @@ Use the following end-point to get your Azure Service Connection ID: [https://de
 ](https://dev.azure.com/{organization}/{project}/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2
 ) (replace organization and project accordingly).
 
-<TODO: Add required screenshots>
+Successful deployment of the project in Azure Pipelines:
 
-- Successful deploy of the project in Azure Pipelines. [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
+![Azure Pipelines deployment](images/azure-pipelines-deploy.png)
 
-- Running Azure App Service from Azure Pipelines automatic deployment
+Running Azure App Service from Azure Pipelines automatic deployment:
 
-- Successful prediction from deployed flask app in Azure Cloud Shell. [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-  The output should look similar to this:
+![Azure App Service](images/web-app.png)
+
+### Make a prediction
+
+Run `make_predict_azure_app.sh` to make a prediction:
+
+![Successful prediction](images/prediction-app-service.png)
+
+View your app logs to check the requests:
 
 ```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
+az webapp log tail -g flask-ml-service-rg --name flask-ml-service-ikhono
 ```
 
-- Output of streamed log files from deployed application
+![App log](images/app-log.png)
 
 ## Clean-up
 
