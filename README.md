@@ -21,7 +21,7 @@
 
 ## Introduction
 
-This project builds a continuous integration and continuous delivery delivery pipeline for a machine learning application implemented with scikit-learn
+This project builds a continuous integration and continuous delivery pipeline for a machine learning application implemented with scikit-learn
 and Flask. The application provides Boston house price predictions.
 
 Continuous integration is implemented using Github Actions along with a Makefile, requirements.txt and application code to perform an initial lint, test, and install cycle. The project builds an integration with Azure Pipelines to enable Continuous Delivery to Azure App Service.
@@ -222,13 +222,16 @@ The following enhancements could be implemented to improve the project:
 
 ## Demo
 
-<TODO: Add link Screencast on YouTube>
+See [here](https://www.youtube.com/watch?v=V91qf4VZ9vk) for a video demonstrating the project.
 
 ## References
 
 - [Build continuous integration (CI) workflows by using GitHub Actions](https://docs.microsoft.com/en-us/learn/modules/github-actions-ci)
 - [Manage repository changes by using pull requests on GitHub](https://docs.microsoft.com/en-us/learn/modules/manage-changes-pull-requests-github)
 - [Implement a code workflow in your build pipeline by using Git and GitHub](https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow)
+- [Quickstart: Create a Python app using Azure App Service on Linux](https://docs.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=bash)
+- [Use CI/CD to deploy a Python web app to Azure App Service on Linux](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp)
+- [Create a CI/CD pipeline for Python with Azure DevOps Starter](https://docs.microsoft.com/en-us/azure/devops-project/azure-devops-project-python)
 
 ## Requirements
 
