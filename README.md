@@ -35,7 +35,7 @@ Continuous integration is implemented using Github Actions along with a Makefile
 
 ## Dependencies
 
-The following are the dependecies of the project you will need:
+The following are the dependencies of the project you will need:
 
 - Create an [Azure Account](https://portal.azure.com)
 - Install the following tools:
